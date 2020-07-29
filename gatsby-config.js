@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+  require('dotenv').config({ path: './.env.development'})
+}
+
 module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
@@ -5,7 +9,7 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: "oeviph464mr3",
-        accessToken: 'cM8KDAPGKAZYlFAGCDzVU0_w7bTEWfBJUd88KOPZK9w',
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       }
     }
   ],
