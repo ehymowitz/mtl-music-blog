@@ -9,6 +9,11 @@ const slugifyOptions = {
   lower: true
 }
 
+// TODO: Refactor to use components
+// Add Layout (which will contain top-nav)
+
+// pages to make: about, musicians voice, new releases
+
 export default function Home({data}) {
 
   return (
