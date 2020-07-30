@@ -1,6 +1,7 @@
 import React from "react"
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 import slugify from 'slugify'
 
 const slugifyOptions = {
@@ -42,6 +43,8 @@ export default function Home({data}) {
     </div>
   )
 }
+
+// TODO: Add same limit as gatsby-node.js limit here?
 
 export const homeQuery = graphql`
   query homeQuery {
