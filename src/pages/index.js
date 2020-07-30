@@ -1,5 +1,70 @@
 import React from "react"
+import Link from 'gatsby-link'
+import Img from "gatsby-image"
+import slugify from 'slugify'
 
-export default function Home() {
-  return <div>Hello world!</div>
+const slugifyOptions = {
+  replacement: '-',
+  remove: /[$*_+~.()'"!\-:@]/g,
+  lower: true
 }
+
+export default function Home({data}) {
+
+  return (
+    <div>
+      <h1>MTL MUSIC BLOG NAME TBDDDD</h1>
+      <ul className="link-list blog-posts-links">
+        { data.blogPosts.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fixed={node.node.coverPhoto.fixed}/>
+              {node.node.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <ul className="link-list album-release-links">
+        { data.albumReleases.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fixed={node.node.albumCover.fixed}/>
+              {node.node.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export const homeQuery = graphql`
+  query homeQuery {
+    albumReleases: allContentfulAlbumRelease(sort: {fields: createdAt, order: ASC}) {
+      edges {
+        node {
+          id
+          title
+          albumCover {
+            fixed(width: 100) {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+    blogPosts: allContentfulBlogPost(sort: {fields: createdAt, order: ASC}) {
+      edges {
+        node {
+          id
+          title
+          coverPhoto {
+            fixed(width: 100) {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`

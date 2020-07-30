@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
       const pageTemplate = path.resolve(`./src/templates/album-release.js`)
         _.each(result.data.allContentfulAlbumRelease.edges, edge => {
           createPage({
-            path: `/pages/${slugify(edge.node.title, slugifyOptions)}/`,
+            path: `/posts/${slugify(edge.node.title, slugifyOptions)}/`,
             component: slash(pageTemplate),
             context: {
               id: edge.node.id
