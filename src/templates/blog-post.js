@@ -2,8 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 const SubPage = () => (
   <div>
-    <h1>Subpage Title</h1>
-    <p>Content here</p>
+    <h1>This is a blog post</h1>
     <Link to="/">Go back to the homepage</Link>
   </div>
 )

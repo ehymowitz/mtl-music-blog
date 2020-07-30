@@ -10,13 +10,14 @@ const slugifyOptions = {
   lower: true
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   return new Promise((resolve, reject) => {
+    // Create Album Releases
     graphql(
         `
           {
-            allContentfulPage(limit: 1000) {
+            allContentfulAlbumRelease(limit: 1000) {
               edges {
                 node {
                   id
@@ -31,8 +32,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       if (result.errors) {
         reject(result.errors)
       }
-      const pageTemplate = path.resolve(`./src/templates/subpage.js`)
-        _.each(result.data.allContentfulPage.edges, edge => {
+      const pageTemplate = path.resolve(`./src/templates/album-release.js`)
+        _.each(result.data.allContentfulAlbumRelease.edges, edge => {
           createPage({
             path: `/pages/${slugify(edge.node.title, slugifyOptions)}/`,
             component: slash(pageTemplate),
@@ -42,6 +43,39 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           })
         })
       resolve()
+    })
+    // Create Blogs Posts
+    .then(() => {
+      graphql(
+        `
+          {
+            allContentfulBlogPost(limit: 1000) {
+              edges {
+                node {
+                  id
+                  title
+                }
+              }
+            }
+          }
+        `
+      )
+      .then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
+        const postTemplate = path.resolve(`./src/templates/blog-post.js`)
+          _.each(result.data.allContentfulBlogPost.edges, edge => {
+        createPage({
+          path: `/posts/${slugify(edge.node.title, slugifyOptions)}/`,
+          component: slash(postTemplate),
+          context: {
+            id: edge.node.id
+          },
+        })
+      })
+        resolve()
+      })
     })
   })
 }
