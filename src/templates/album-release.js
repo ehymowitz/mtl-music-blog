@@ -12,7 +12,7 @@ export default function AlbumRelease({data}) {
   return(
     <div>
       <h1 className="album-release-title">{title}</h1>
-      <Img style={{maxWidth: "50vw"}} fluid={cover}/>
+      <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
 
       <div className="album-release-content">
         {documentToReactComponents(content)}
@@ -23,8 +23,8 @@ export default function AlbumRelease({data}) {
   )
 }
 
-export const pageQuery = graphql`
-  query pageQuery( $id : String! ) {
+export const albumReleaseQuery = graphql`
+  query albumReleaseQuery( $id : String! ) {
     contentfulAlbumRelease( id: { eq: $id } ) {
       id
       content {
