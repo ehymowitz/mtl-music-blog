@@ -6,6 +6,7 @@ import LinkListHome from "../components/link-list-home"
 export default function Home({data}) {
   return (
     <Layout>
+      <LinkListHome data={data} />
     </Layout>
   )
 }
@@ -44,4 +45,3 @@ export const homeQuery = graphql`
   }
 `
 
-      // <LinkListHome data={data} />
