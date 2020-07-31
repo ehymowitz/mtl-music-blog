@@ -6,20 +6,14 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/layout"
 
 export default function BlogPost({data}) {
-  const content = data.contentfulBlogPost.content.json
-  const title = data.contentfulBlogPost.title
-  const cover = data.contentfulBlogPost.coverPhoto.fluid
+  // const content = data.contentfulBlogPost.content.json
+  // const title = data.contentfulBlogPost.title
+  // const cover = data.contentfulBlogPost.coverPhoto.fluid
 
   // TODO: Show author and date, additional photos.
 
   return(
     <Layout>
-      <h1 className="blog-post-title">{title}</h1>
-      <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
-
-      <div className="blog-post-content">
-        {documentToReactComponents(content)}
-      </div>
 
       <Link to="/">Go back to the homepage</Link>
     </Layout>
@@ -42,3 +36,10 @@ export const blogPostQuery = graphql`
     }
   }
 `
+
+      // <h1 className="blog-post-title">{title}</h1>
+      // <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
+
+      // <div className="blog-post-content">
+      //   {documentToReactComponents(content)}
+      // </div>

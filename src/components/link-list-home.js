@@ -15,6 +15,7 @@ const slugifyOptions = {
 export default function LinkListHome({data}) {
   return(
     <div>
+      <h2>Blog Posts</h2>
       <ul className="link-list blog-posts-links">
         { data.blogPosts.edges.map((node, i) => (
           <li key={i}>
@@ -25,6 +26,7 @@ export default function LinkListHome({data}) {
           </li>
         ))}
       </ul>
+      <h2>Album Releases</h2>
       <ul className="link-list album-release-links">
         { data.albumReleases.edges.map((node, i) => (
           <li key={i}>
