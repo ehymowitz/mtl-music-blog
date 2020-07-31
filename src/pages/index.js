@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import Layout from "../components/layout"
-import LinkListHome from "../components/link-list-home"
+import Layout from "../components/fixed/layout"
+import LinkListHome from "../components/link-lists/link-list-home"
 
 export default function Home({data}) {
   return (

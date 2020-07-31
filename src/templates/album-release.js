@@ -1,37 +1,38 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Layout from "../components/layout"
+import Layout from "../components/fixed/layout"
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json
   const title = data.contentfulAlbumRelease.title
   const cover = data.contentfulAlbumRelease.albumCover.fluid
-
-  // TODO: Show author and date, additional photos.
+  const author = data.contentfulAlbumRelease.author
+  const date = data.contentfulAlbumRelease.date
 
   return(
     <Layout>
       <h1 className="album-release-title">{title}</h1>
+      <h2>{author}</h2>
+      <h2>{date}</h2>
       <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
 
       <div className="album-release-content">
         {documentToReactComponents(content)}
       </div>
-
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
 
-// TODO: Change Query to find addtional photos
+// TODO: Eventually change query to find addtional photos
 
 export const albumReleaseQuery = graphql`
   query albumReleaseQuery( $id : String! ) {
     contentfulAlbumRelease( id: { eq: $id } ) {
       id
+      author
+      date
       content {
         json
       }

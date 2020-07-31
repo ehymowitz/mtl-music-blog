@@ -1,42 +1,57 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Layout from "../components/layout"
+import Layout from "../components/fixed/layout"
 
 export default function BlogPost({data}) {
   const content = data.contentfulBlogPost.content.json
   const title = data.contentfulBlogPost.title
   const cover = data.contentfulBlogPost.coverPhoto.fluid
-
-  // TODO: Show author and date, additional photos.
+  const author = data.contentfulBlogPost.author
+  const date = data.contentfulBlogPost.date
+  const additionalPhoto1 = data.contentfulBlogPost.additionalPhoto1
+  const additionalPhoto2 = data.contentfulBlogPost.additionalPhoto2
 
   return(
     <Layout>
       <h1 className="blog-post-title">{title}</h1>
+      <h2>{author}</h2>
+      <h2>{date}</h2>
+      {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
+      {additionalPhoto2 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto2.fluid}/>}
       <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
 
       <div className="blog-post-content">
         {documentToReactComponents(content)}
       </div>
-
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
 
-// TODO: Change Query to find addtional photos
+// TODO: Eventually add query for 3rd photo
 
 export const blogPostQuery = graphql`
   query blogPostQuery( $id : String! ) {
     contentfulBlogPost( id: { eq: $id } ) {
       id
+      author
+      date
       content {
         json
       }
       title
       coverPhoto {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      additionalPhoto1 {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      additionalPhoto2 {
         fluid {
           ...GatsbyContentfulFluid_withWebp
         }
