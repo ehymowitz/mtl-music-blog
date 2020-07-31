@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Layout from "../components/layout"
 
 export default function BlogPost({data}) {
   const content = data.contentfulBlogPost.content.json
@@ -10,7 +11,7 @@ export default function BlogPost({data}) {
   const cover = data.contentfulBlogPost.coverPhoto.fluid
 
   return(
-    <div>
+    <Layout>
       <h1 className="blog-post-title">{title}</h1>
       <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
 
@@ -19,7 +20,7 @@ export default function BlogPost({data}) {
       </div>
 
       <Link to="/">Go back to the homepage</Link>
-    </div>
+    </Layout>
   )
 }
 

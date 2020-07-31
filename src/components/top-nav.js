@@ -1,1 +1,15 @@
-// TODO: Create nav links to pages which will also have to be made
+import React from "react"
+import Link from "gatsby-link"
+
+export default function TopNav() {
+  return(
+    <div>
+      <Link to="/">
+        <h1>SITE TITLE</h1>
+      </Link>
+      <Link to="/about">About</Link>
+      <Link to="/musicians-voice">Musicians Voice</Link>
+      <Link to="/new-releases">New Releases</Link>
+    </div>
+  )
+}

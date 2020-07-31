@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Layout from "../components/layout"
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json
@@ -10,7 +11,7 @@ export default function AlbumRelease({data}) {
   const cover = data.contentfulAlbumRelease.albumCover.fluid
 
   return(
-    <div>
+    <Layout>
       <h1 className="album-release-title">{title}</h1>
       <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
 
@@ -19,7 +20,7 @@ export default function AlbumRelease({data}) {
       </div>
 
       <Link to="/">Go back to the homepage</Link>
-    </div>
+    </Layout>
   )
 }
 

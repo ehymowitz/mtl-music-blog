@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import slugify from 'slugify'
+import Layout from "../components/layout"
 
 const slugifyOptions = {
   replacement: '-',
@@ -10,16 +11,12 @@ const slugifyOptions = {
   lower: true
 }
 
-// TODO: Refactor to use components
-// Add Layout (which will contain top-nav)
-
-// pages to make: about, musicians voice, new releases
+// TODO: Refactor list to use components
 
 export default function Home({data}) {
 
   return (
-    <div>
-      <h1>MTL MUSIC BLOG NAME TBDDDD</h1>
+    <Layout>
       <ul className="link-list blog-posts-links">
         { data.blogPosts.edges.map((node, i) => (
           <li key={i}>
@@ -40,7 +37,7 @@ export default function Home({data}) {
           </li>
         ))}
       </ul>
-    </div>
+    </Layout>
   )
 }
 
