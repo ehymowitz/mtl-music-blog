@@ -1,47 +1,18 @@
 import React from "react"
-import Link from 'gatsby-link'
-import Img from "gatsby-image"
 import { graphql } from 'gatsby'
-import slugify from 'slugify'
 import Layout from "../components/layout"
-
-const slugifyOptions = {
-  replacement: '-',
-  remove: /[$*_+~.()'"!\-:@]/g,
-  lower: true
-}
-
-// TODO: Refactor list to use components
+import LinkListHome from "../components/link-list-home"
 
 export default function Home({data}) {
-
   return (
     <Layout>
-      <ul className="link-list blog-posts-links">
-        { data.blogPosts.edges.map((node, i) => (
-          <li key={i}>
-            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <Img fixed={node.node.coverPhoto.fixed}/>
-              {node.node.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <ul className="link-list album-release-links">
-        { data.albumReleases.edges.map((node, i) => (
-          <li key={i}>
-            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <Img fixed={node.node.albumCover.fixed}/>
-              {node.node.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <LinkListHome data={data} />
     </Layout>
   )
 }
 
 // TODO: Add same limit as gatsby-node.js limit here?
+// Include date and author data
 
 export const homeQuery = graphql`
   query homeQuery {

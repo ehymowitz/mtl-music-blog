@@ -10,6 +10,8 @@ export default function AlbumRelease({data}) {
   const title = data.contentfulAlbumRelease.title
   const cover = data.contentfulAlbumRelease.albumCover.fluid
 
+  // TODO: Show author and date, additional photos.
+
   return(
     <Layout>
       <h1 className="album-release-title">{title}</h1>

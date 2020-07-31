@@ -10,6 +10,8 @@ export default function BlogPost({data}) {
   const title = data.contentfulBlogPost.title
   const cover = data.contentfulBlogPost.coverPhoto.fluid
 
+  // TODO: Show author and date, additional photos.
+
   return(
     <Layout>
       <h1 className="blog-post-title">{title}</h1>
