@@ -26,7 +26,7 @@ export default function AlbumRelease({data}) {
   )
 }
 
-// TODO: Change Querty to find addtional photos
+// TODO: Change Query to find addtional photos
 
 export const albumReleaseQuery = graphql`
   query albumReleaseQuery( $id : String! ) {

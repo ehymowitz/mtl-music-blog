@@ -26,7 +26,7 @@ export default function BlogPost({data}) {
   )
 }
 
-// TODO: Change Querty to find addtional photos
+// TODO: Change Query to find addtional photos
 
 export const blogPostQuery = graphql`
   query blogPostQuery( $id : String! ) {

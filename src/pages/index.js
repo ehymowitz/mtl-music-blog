@@ -11,12 +11,11 @@ export default function Home({data}) {
   )
 }
 
-// TODO: Add same limit as gatsby-node.js limit here?
-// Include date and author data
+// TODO: Include date and author data. Sort by date
 
 export const homeQuery = graphql`
   query homeQuery {
-    albumReleases: allContentfulAlbumRelease(sort: {fields: createdAt, order: ASC}) {
+    albumReleases: allContentfulAlbumRelease(limit: 1000) {
       edges {
         node {
           id
@@ -29,7 +28,7 @@ export const homeQuery = graphql`
         }
       }
     }
-    blogPosts: allContentfulBlogPost(sort: {fields: createdAt, order: ASC}) {
+    blogPosts: allContentfulBlogPost(limit: 1000) {
       edges {
         node {
           id

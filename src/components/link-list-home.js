@@ -9,8 +9,7 @@ const slugifyOptions = {
   lower: true
 }
 
-// TODO: Refactor to use cards. Sort by date
-// Keep album releases and blog posts in separate columns?
+// TODO: Refactor to use cards. Check sorted by date
 
 export default function LinkListHome({data}) {
   return(
