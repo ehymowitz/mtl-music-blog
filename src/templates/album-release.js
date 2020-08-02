@@ -10,7 +10,7 @@ export default function AlbumRelease({data}) {
   const cover = data.contentfulAlbumRelease.albumCover.fluid
   const author = data.contentfulAlbumRelease.author
   const date = data.contentfulAlbumRelease.date
-  const additionalPhoto1 = data.contentfulAlbumRelease.additionPhoto1
+  const additionalPhoto1 = data.contentfulAlbumRelease.additionalPhoto1
 
   return(
     <Layout>
@@ -44,7 +44,7 @@ export const albumReleaseQuery = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
-      additionPhoto1 {
+      additionalPhoto1 {
         fluid {
           ...GatsbyContentfulFluid_withWebp
         }
