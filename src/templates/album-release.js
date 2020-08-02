@@ -10,12 +10,14 @@ export default function AlbumRelease({data}) {
   const cover = data.contentfulAlbumRelease.albumCover.fluid
   const author = data.contentfulAlbumRelease.author
   const date = data.contentfulAlbumRelease.date
+  const additionalPhoto1 = data.contentfulAlbumRelease.additionPhoto1
 
   return(
     <Layout>
       <h1 className="album-release-title">{title}</h1>
       <h2>{author}</h2>
       <h2>{date}</h2>
+      {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
       <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
 
       <div className="album-release-content">
@@ -38,6 +40,11 @@ export const albumReleaseQuery = graphql`
       }
       title
       albumCover {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      additionPhoto1 {
         fluid {
           ...GatsbyContentfulFluid_withWebp
         }
