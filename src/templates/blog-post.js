@@ -1,6 +1,7 @@
 import React from 'react'
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
+import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/fixed/layout"
 
@@ -13,6 +14,18 @@ export default function BlogPost({data}) {
   const additionalPhoto1 = data.contentfulBlogPost.additionalPhoto1
   const additionalPhoto2 = data.contentfulBlogPost.additionalPhoto2
 
+  const options = {
+    renderMark: {
+      [MARKS.CODE]: (text) => {
+        if((text).includes("open.spotify")){
+          const link = text.substring(text.search("src=")+5, text.search("width=")-2)
+          return <iframe title={title} src={link} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+        }
+      }
+    }
+  }
+
+
   return(
     <Layout>
       <h1 className="blog-post-title">{title}</h1>
@@ -23,7 +36,7 @@ export default function BlogPost({data}) {
       <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
 
       <div className="blog-post-content">
-        {documentToReactComponents(content)}
+        {documentToReactComponents(content, options)}
       </div>
     </Layout>
   )
