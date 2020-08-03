@@ -12,8 +12,6 @@ export default function NewReleases({data}) {
   )
 }
 
-// TODO: Display data, query more data
-
 export const albumQuery = graphql`
   query albumQuery {
     allContentfulAlbumRelease(limit: 1000){

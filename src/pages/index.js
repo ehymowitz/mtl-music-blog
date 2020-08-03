@@ -11,7 +11,7 @@ export default function Home({data}) {
   )
 }
 
-// TODO: Include date and author data. Sort by date
+// TODO: Sort by date
 
 export const homeQuery = graphql`
   query homeQuery {
