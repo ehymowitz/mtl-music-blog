@@ -1,12 +1,13 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/fixed/layout"
+import LinkListRelease from '../components/link-lists/link-list-release'
 
 export default function NewReleases({data}) {
-  console.log(data)
   return(
     <Layout>
-      <p>New Releases</p>
+      <h2>New Releases</h2>
+      <LinkListRelease data = {data} />
     </Layout>
   )
 }

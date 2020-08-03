@@ -12,6 +12,8 @@ export default function AlbumRelease({data}) {
   const author = data.contentfulAlbumRelease.author
   const date = data.contentfulAlbumRelease.date
   const additionalPhoto1 = data.contentfulAlbumRelease.additionalPhoto1
+  const additionalPhoto2 = data.contentfulAlbumRelease.additionalPhoto2
+  const additionalPhoto3 = data.contentfulAlbumRelease.additionalPhoto3
 
   const options = {
     renderMark: {
@@ -30,6 +32,8 @@ export default function AlbumRelease({data}) {
       <h2>{author}</h2>
       <h2>{date}</h2>
       {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
+      {additionalPhoto2 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto2.fluid}/>}
+      {additionalPhoto3 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto3.fluid}/>}
       <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
       <div className="album-release-content">
         {documentToReactComponents(content,options)}
@@ -37,8 +41,6 @@ export default function AlbumRelease({data}) {
     </Layout>
   )
 }
-
-// TODO: Eventually change query to find addtional photos
 
 export const albumReleaseQuery = graphql`
   query albumReleaseQuery( $id : String! ) {
@@ -56,6 +58,16 @@ export const albumReleaseQuery = graphql`
         }
       }
       additionalPhoto1 {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      additionalPhoto2 {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      additionalPhoto3 {
         fluid {
           ...GatsbyContentfulFluid_withWebp
         }

@@ -1,12 +1,13 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/fixed/layout"
+import LinkListBlog from '../components/link-lists/link-list-blog'
 
 export default function MusiciansVoice({data}) {
-  console.log(data)
   return(
     <Layout>
-      <p>Musicians Voice</p>
+      <h2>Musicians Voice</h2>
+      <LinkListBlog data={data}/>
     </Layout>
   )
 }
