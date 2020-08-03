@@ -20,6 +20,8 @@ export const albumQuery = graphql`
       edges {
         node {
           id
+          author
+          date
           title
           albumCover {
             fixed(width: 100) {

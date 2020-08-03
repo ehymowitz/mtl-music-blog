@@ -20,6 +20,8 @@ export default function LinkListBlog({data}) {
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
               <Img fixed={node.node.coverPhoto.fixed}/>
               {node.node.title}
+              {node.node.date}
+              {node.node.author}
             </Link>
           </li>
         ))}

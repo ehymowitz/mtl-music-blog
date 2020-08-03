@@ -19,6 +19,8 @@ export const homeQuery = graphql`
       edges {
         node {
           id
+          author
+          date
           title
           albumCover {
             fixed(width: 100) {
@@ -32,6 +34,8 @@ export const homeQuery = graphql`
       edges {
         node {
           id
+          author
+          date
           title
           coverPhoto {
             fixed(width: 100) {

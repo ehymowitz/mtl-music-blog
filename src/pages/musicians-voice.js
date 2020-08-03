@@ -20,6 +20,8 @@ export const blogQuery = graphql`
       edges {
         node {
           id
+          author
+          date
           title
           coverPhoto {
             fixed(width: 100) {

@@ -21,6 +21,8 @@ export default function LinkListHome({data}) {
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
               <Img fixed={node.node.coverPhoto.fixed}/>
               {node.node.title}
+              {node.node.date}
+              {node.node.author}
             </Link>
           </li>
         ))}
@@ -32,6 +34,8 @@ export default function LinkListHome({data}) {
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
               <Img fixed={node.node.albumCover.fixed}/>
               {node.node.title}
+              {node.node.date}
+              {node.node.author}
             </Link>
           </li>
         ))}

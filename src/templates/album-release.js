@@ -48,10 +48,10 @@ export const albumReleaseQuery = graphql`
       id
       author
       date
+      title
       content {
         json
       }
-      title
       albumCover {
         fluid {
           ...GatsbyContentfulFluid_withWebp

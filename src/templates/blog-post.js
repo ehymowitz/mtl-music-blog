@@ -50,10 +50,10 @@ export const blogPostQuery = graphql`
       id
       author
       date
+      title
       content {
         json
       }
-      title
       coverPhoto {
         fluid {
           ...GatsbyContentfulFluid_withWebp
