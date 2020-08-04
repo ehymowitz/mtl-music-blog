@@ -1,8 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
 
-// TODO: add contact form
-
 export default function TopNav() {
   return(
     <div className="top-nav">
