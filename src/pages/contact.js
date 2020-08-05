@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/fixed/layout"
+import SEO from "../components/seo"
 
 export default function Contact() {
   return (
     <Layout>
+    <SEO title="Contact" description="Contact us"/>
       <h2>Ask Us Anything!</h2>
       <form name="contact" className="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input aria-label="hidden" type="hidden" name="form-name" value="contact" />

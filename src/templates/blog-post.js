@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/fixed/layout"
+import SEO from "../components/seo"
 
 export default function BlogPost({data}) {
   const content = data.contentfulBlogPost.content.json
@@ -25,9 +26,9 @@ export default function BlogPost({data}) {
     }
   }
 
-
   return(
     <Layout>
+      <SEO title="Blog Post" description={title} article={true} image={cover.src}/>
       <h1 className="blog-post-title">{title}</h1>
       <h2>{author}</h2>
       <h2>{date}</h2>

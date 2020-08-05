@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/fixed/layout"
+import SEO from "../components/seo"
 
 export default function About() {
   return(
     <Layout>
+    <SEO title="About" description="About the project"/>
       <h2>Seen N Heard</h2>
       <p>
         is a music collective. Created to bypass the noise and warped images of artists in media to dive deep into the artists behind the sounds: allowing the stories, the intentions, and the realities that create the music you hear.

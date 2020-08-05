@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/fixed/layout"
+import SEO from "../components/seo"
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json
@@ -28,6 +29,7 @@ export default function AlbumRelease({data}) {
 
   return(
     <Layout>
+      <SEO title="New Release" description={title} article={true} image={cover.src}/>
       <h1 className="album-release-title">{title}</h1>
       <h2>{author}</h2>
       <h2>{date}</h2>

@@ -13,4 +13,12 @@ module.exports = {
       }
     }
   ],
+  siteMetadata: {
+    title: "THE SOUND GAP",
+    titleTemplate: "%s · THE SOUND GAP",
+    description:
+      "A place for artists to be seen and heard",
+    url: "https://www.doe.com", // No trailing slash allowed! Update
+    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder. Update
+  },
 }
