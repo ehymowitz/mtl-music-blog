@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
 import slugify from 'slugify'
-
 import HomeCard from '../cards/home-card'
 
 const slugifyOptions = {
@@ -10,7 +9,7 @@ const slugifyOptions = {
   lower: true
 }
 
-// TODO: Refactor to use cards. Check sorted by date
+// TODO: Check sorted by date
 
 export default function LinkListHome({data}) {
   return(

@@ -1,4 +1,5 @@
-// Format details
+// Reveal heading of each column on hover
+// Format details, add reading time
 // Reading time: https://www.gatsbyjs.org/packages/gatsby-remark-reading-time-v2/
 
 import React from "react"
