@@ -1,7 +1,8 @@
 import React from "react"
 import Link from "gatsby-link"
-import Img from "gatsby-image"
 import slugify from 'slugify'
+
+import HomeCard from '../cards/home-card'
 
 const slugifyOptions = {
   replacement: '-',
@@ -13,29 +14,33 @@ const slugifyOptions = {
 
 export default function LinkListHome({data}) {
   return(
-    <div>
+    <div className="home-links">
       <h2>Blog Posts</h2>
-      <ul className="link-list blog-posts-links">
+      <ul className="home-link-list">
         { data.blogPosts.edges.map((node, i) => (
           <li key={i}>
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <Img fixed={node.node.coverPhoto.fixed}/>
-              {node.node.title}
-              {node.node.date}
-              {node.node.author}
+              <HomeCard
+                fluid={node.node.coverPhoto.fluid}
+                title={node.node.title}
+                date={node.node.date}
+                author={node.node.author}
+              />
             </Link>
           </li>
         ))}
       </ul>
       <h2>Album Releases</h2>
-      <ul className="link-list album-release-links">
+      <ul className="home-link-list">
         { data.albumReleases.edges.map((node, i) => (
           <li key={i}>
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <Img fixed={node.node.albumCover.fixed}/>
-              {node.node.title}
-              {node.node.date}
-              {node.node.author}
+              <HomeCard
+                fluid={node.node.albumCover.fluid}
+                title={node.node.title}
+                date={node.node.date}
+                author={node.node.author}
+              />
             </Link>
           </li>
         ))}

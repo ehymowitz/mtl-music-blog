@@ -1,8 +1,9 @@
 .top-nav {
   display: flex;
   align-items: flex-end;
-  margin: 0 auto;
+  margin: 10px auto;
   width: fit-content;
+  max-height: 10vh;
 
   a {
     text-align: center;

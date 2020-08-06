@@ -25,8 +25,8 @@ export const homeQuery = graphql`
           date
           title
           albumCover {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -40,8 +40,8 @@ export const homeQuery = graphql`
           date
           title
           coverPhoto {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }

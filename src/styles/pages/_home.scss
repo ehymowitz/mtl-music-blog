@@ -1,0 +1,19 @@
+.home-links {
+  display: flex;
+
+  h2{
+    display: none;
+  }
+  .home-link-list {
+    list-style-type: none;
+    width: 50%;
+    padding: 0px;
+    display: grid;
+    height: 80vh;
+    overflow: scroll;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    p {
+      display: none;
+    }
+  }
+}
