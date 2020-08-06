@@ -11,9 +11,6 @@
     display: grid;
     height: 80vh;
     overflow: scroll;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    p {
-      display: none;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }

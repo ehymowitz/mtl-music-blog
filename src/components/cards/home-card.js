@@ -1,5 +1,4 @@
-// TODO: Card with RAM for home page
-// Hover to show details
+// Format details
 // Reading time: https://www.gatsbyjs.org/packages/gatsby-remark-reading-time-v2/
 
 import React from "react"
@@ -7,16 +6,13 @@ import Img from "gatsby-image"
 
 export default function HomeCard({fluid, title, date, author}) {
   return (
-    <div>
+    <div className="home-card">
       <Img
+        className="img"
         fluid={fluid}
         alt={title}
-        style={{
-          height: "40vh",
-          margin: "10px"
-        }}
       />
-      <div>
+      <div className="hover-text">
         <p>{title}{date}{author}</p>
       </div>
     </div>
