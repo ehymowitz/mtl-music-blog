@@ -22,9 +22,6 @@ export default function SEO({ title, description, image, article }) {
     url: `${siteUrl}${pathname}`,
   }
 
-  console.log(seo.image)
-  console.log(site.siteMetadata.defaultImage === seo.image)
-
   //TODO: update url, default photo when ready
 
   return (

@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 // Font Family - Krona One, Weight 400
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
+// font-family: 'Ubuntu', sans-serif;
+// Light 300
+// Light 300 italic
+// Regular 400
+// Medium 500
+// Medium 500 italic
+
 // Variables
 @import './variables.scss';
 
@@ -12,4 +20,8 @@
 @import './fixed/topnav.scss';
 
 // Pages
-@import './pages/contact.scss'
+@import './pages/home.scss';
+@import './pages/contact.scss';
+
+// Cards
+@import './cards/home-card.scss';

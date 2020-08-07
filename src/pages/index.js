@@ -22,11 +22,11 @@ export const homeQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           albumCover {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -37,11 +37,11 @@ export const homeQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           coverPhoto {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }

@@ -1,9 +1,11 @@
 .top-nav {
   display: flex;
   align-items: flex-end;
-  margin: 0 auto;
-  width: fit-content;
-
+  width: 100vw;
+  min-height: 10vh;
+  justify-content: space-around;
+  padding-bottom: 30px;
+  border-bottom: 1px solid grey;
   a {
     text-align: center;
     margin: 0px 10px;

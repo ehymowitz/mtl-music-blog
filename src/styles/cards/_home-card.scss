@@ -1,0 +1,24 @@
+.home-card {
+  position: relative;
+  margin: 30px;
+  margin-top: 0px;
+  .img {
+    min-height: 40vh;
+  }
+  .hover-text{
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    transition: 500ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hover-text:hover {
+    background: rgba(255,255,255,.7);
+    opacity: 1;
+  }
+}
