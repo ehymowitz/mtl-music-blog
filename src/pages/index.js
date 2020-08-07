@@ -22,7 +22,7 @@ export const homeQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           albumCover {
             fluid {
@@ -37,7 +37,7 @@ export const homeQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           coverPhoto {
             fluid {

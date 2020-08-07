@@ -14,36 +14,47 @@ const slugifyOptions = {
 export default function LinkListHome({data}) {
   return(
     <div className="home-links">
-      <h2>Blog Posts</h2>
-      <ul className="home-link-list">
-        { data.blogPosts.edges.map((node, i) => (
-          <li key={i}>
-            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <HomeCard
-                fluid={node.node.coverPhoto.fluid}
-                title={node.node.title}
-                date={node.node.date}
-                author={node.node.author}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <h2>Album Releases</h2>
-      <ul className="home-link-list">
-        { data.albumReleases.edges.map((node, i) => (
-          <li key={i}>
-            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <HomeCard
-                fluid={node.node.albumCover.fluid}
-                title={node.node.title}
-                date={node.node.date}
-                author={node.node.author}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div style={{
+        width: "50%",
+        textAlign: "center",
+        position: "relative"}}>
+        <h2>&nbsp;&nbsp;BLOG</h2>
+        <ul className="home-link-list">
+          { data.blogPosts.edges.map((node, i) => (
+            <li key={i}>
+              <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+                <HomeCard
+                  fluid={node.node.coverPhoto.fluid}
+                  title={node.node.title}
+                  date={node.node.date}
+                  author={node.node.author}
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div style={{
+        width: "50%",
+        textAlign: "center",
+        position: "relative"
+      }}>
+        <h2>RELEASES</h2>
+        <ul className="home-link-list">
+          { data.albumReleases.edges.map((node, i) => (
+            <li key={i}>
+              <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+                <HomeCard
+                  fluid={node.node.albumCover.fluid}
+                  title={node.node.title}
+                  date={node.node.date}
+                  author={node.node.author}
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

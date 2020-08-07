@@ -1,16 +1,33 @@
 .home-links {
   display: flex;
 
-  h2{
-    display: none;
+  h2 {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    top: 20%;
+    left: 48%;
+    letter-spacing: 10px;
   }
+
   .home-link-list {
-    list-style-type: none;
-    width: 50%;
     padding: 0px;
     display: grid;
-    height: 80vh;
+    height: 75vh;
     overflow: scroll;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    list-style-type: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+
+@media only screen and (max-width: $Tablets) {
+  .home-links{
+    text-align: center;
+    h2{
+      position: static;
+      writing-mode: initial;
+      letter-spacing: 2px;
+    }
   }
 }

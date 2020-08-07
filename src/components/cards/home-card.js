@@ -1,7 +1,3 @@
-// Reveal heading of each column on hover
-// Format details, add reading time
-// Reading time: https://www.gatsbyjs.org/packages/gatsby-remark-reading-time-v2/
-
 import React from "react"
 import Img from "gatsby-image"
 
@@ -14,7 +10,9 @@ export default function HomeCard({fluid, title, date, author}) {
         alt={title}
       />
       <div className="hover-text">
-        <p>{title}{date}{author}</p>
+        <p>{title}</p>
+        <p><i>{date}</i></p>
+        <p>{author}</p>
       </div>
     </div>
   )
