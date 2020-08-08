@@ -2,12 +2,27 @@
   display: flex;
   align-items: flex-end;
   width: 100vw;
+  margin: 0 auto;
   min-height: 10vh;
   justify-content: space-around;
   padding-bottom: 30px;
-  border-bottom: 1px solid grey;
   a {
     text-align: center;
     margin: 0px 10px;
+  }
+}
+
+@media only screen and (max-width: $Laptops-sm) {
+  .top-nav {
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: $Phones) {
+  .top-nav {
+    padding-bottom: 20px;
+    a {
+      margin: 0px 5px;
+    }
   }
 }

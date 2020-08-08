@@ -16,7 +16,6 @@ export default function LinkListHome({data}) {
     <div className="home-links">
       <div style={{
         width: "50%",
-        textAlign: "center",
         position: "relative"}}>
         <h2>&nbsp;&nbsp;BLOG</h2>
         <ul className="home-link-list">
@@ -36,7 +35,6 @@ export default function LinkListHome({data}) {
       </div>
       <div style={{
         width: "50%",
-        textAlign: "center",
         position: "relative"
       }}>
         <h2>RELEASES</h2>

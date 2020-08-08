@@ -3,7 +3,7 @@ import TopNav from "./top-nav"
 
 export default function Layout({children}) {
   return (
-    <div className="container">
+    <div>
       <TopNav/>
       {children}
     </div>
