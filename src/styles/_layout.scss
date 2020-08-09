@@ -77,3 +77,13 @@ a {
     font-size: 8px;
   }
 }
+
+@media only screen and (max-width: $Phone-sm) {
+  h1 {
+    font-size: 12px;
+  }
+
+  a {
+    font-size: 6px;
+  }
+}
