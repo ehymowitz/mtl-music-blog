@@ -1,0 +1,12 @@
+.release-card {
+  display: flex;
+  .preview-image {
+    display: fixed;
+  }
+  .text-container {
+    display: grid;
+    justify-items: end;
+    grid-template-rows: repeat(3, 0.5fr);
+    grid-template-areas: "top top" "left right" "bottom bottom";
+  }
+}
