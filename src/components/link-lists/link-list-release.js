@@ -19,12 +19,15 @@ export default function LinkListRelease({data}) {
         to={`/posts/${slugify(data.allContentfulAlbumRelease.edges[0].node.title, slugifyOptions)}`}
         className="recent-article-image"
       >
+        <div className="image-overlay"/>
         <Img
           fluid={data.allContentfulAlbumRelease.edges[0].node.albumCover.fluid}
         />
-        <h3>{data.allContentfulAlbumRelease.edges[0].node.title}</h3>
-        <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
-        <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
+        <div className="recent-article-text">
+          <h3>{data.allContentfulAlbumRelease.edges[0].node.title}</h3>
+          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
+          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
+        </div>
       </Link>
       <ul className="album-release-link-list">
         {data.allContentfulAlbumRelease.edges.map((node, i) => (
