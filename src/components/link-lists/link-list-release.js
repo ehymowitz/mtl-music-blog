@@ -15,11 +15,16 @@ const slugifyOptions = {
 export default function LinkListRelease({data}) {
   return(
     <div className="release-links">
-      <Link to={`/posts/${slugify(data.allContentfulAlbumRelease.edges[0].node.title, slugifyOptions)}`}>
+      <Link
+        to={`/posts/${slugify(data.allContentfulAlbumRelease.edges[0].node.title, slugifyOptions)}`}
+        className="recent-article-image"
+      >
         <Img
-          className="release-big-image"
           fluid={data.allContentfulAlbumRelease.edges[0].node.albumCover.fluid}
         />
+        <h3>{data.allContentfulAlbumRelease.edges[0].node.title}</h3>
+        <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
+        <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
       </Link>
       <ul className="album-release-link-list">
         {data.allContentfulAlbumRelease.edges.map((node, i) => (

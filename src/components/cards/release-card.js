@@ -8,13 +8,12 @@ export default function ReleaseCard({image, title, date, author, content}) {
         className="preview-image"
         fluid={image}
         alt={title}
-        style={{width: "30vw", margin: "20px"}}
       />
       <div className="text-container">
-        <h3 style={{gridArea: "top"}}>{title}</h3>
-        <h3 style={{gridArea: "left"}}>{date}</h3>
-        <h3 style={{gridArea: "right"}}>author</h3>
-        <p style={{gridArea: "bottom", textAlign: "end"}}>{content}</p>
+        <h3 style={{gridArea: "top", marginBottom: "10px"}}>{title}</h3>
+        <h3 style={{gridArea: "left", textAlign: "center"}}>{date}</h3>
+        <h3 style={{gridArea: "right", textAlign: "center"}}>{author}</h3>
+        <p style={{gridArea: "bottom", margin: "0px"}}>{content}</p>
       </div>
     </div>
   )

@@ -1,12 +1,12 @@
 .release-card {
   display: flex;
   .preview-image {
-    display: fixed;
+    min-width: 18vw;
   }
   .text-container {
     display: grid;
-    justify-items: end;
-    grid-template-rows: repeat(3, 0.5fr);
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
     grid-template-areas: "top top" "left right" "bottom bottom";
+    margin-left: 20px;
   }
 }
