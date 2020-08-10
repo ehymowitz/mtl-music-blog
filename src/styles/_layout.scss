@@ -87,3 +87,25 @@ a {
     font-size: 6px;
   }
 }
+
+@media only screen and (min-width: $Laptops-big) {
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  a {
+    font-size: 24px;
+  }
+}

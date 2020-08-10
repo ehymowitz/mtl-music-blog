@@ -10,6 +10,9 @@
 
   .recent-article-text {
     margin-top: 10px;
+    h3 {
+      padding-top: 5px;
+    }
   }
 
   .album-release-link-list {
@@ -61,11 +64,15 @@
     .recent-article-image {
       margin: 20px;
       margin-bottom: 0px;
+      .recent-article-text {
+        padding: 0px 10px 10px;
+      }
     }
     .album-release-link-list {
       margin: 20px;
       padding-left: 0px;
     }
+
   }
 }
 
