@@ -15,18 +15,18 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     // Create Album Releases
     graphql(
-        `
-          {
-            allContentfulAlbumRelease(limit: 1000) {
-              edges {
-                node {
-                  id
-                  title
-                }
+      `
+        {
+          allContentfulAlbumRelease(limit: 1000) {
+            edges {
+              node {
+                id
+                title
               }
             }
           }
-        `
+        }
+      `
     )
     .then(result => {
       if (result.errors) {

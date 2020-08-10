@@ -1,10 +1,10 @@
 import React from 'react'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { MARKS } from '@contentful/rich-text-types'
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Layout from "../components/fixed/layout"
-import SEO from "../components/seo"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Layout from '../components/fixed/layout'
+import SEO from '../components/seo'
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json

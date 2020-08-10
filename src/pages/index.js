@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from "../components/fixed/layout"
-import LinkListHome from "../components/link-lists/link-list-home"
-import SEO from "../components/seo"
+import Layout from '../components/fixed/layout'
+import LinkListHome from '../components/link-lists/link-list-home'
+import SEO from '../components/seo'
 
 export default function Home({data}) {
   return (

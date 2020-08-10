@@ -1,8 +1,8 @@
-import React from "react"
-import Link from "gatsby-link"
+import React from 'react'
+import Link from 'gatsby-link'
 import slugify from 'slugify'
 import ReleaseCard from '../cards/release-card'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 
 const slugifyOptions = {
   replacement: '-',

@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from "../components/fixed/layout"
+import Layout from '../components/fixed/layout'
 import LinkListBlog from '../components/link-lists/link-list-blog'
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 export default function MusiciansVoice({data}) {
   return(

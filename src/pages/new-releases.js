@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from "../components/fixed/layout"
+import Layout from '../components/fixed/layout'
 import LinkListRelease from '../components/link-lists/link-list-release'
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 export default function NewReleases({data}) {
   return(

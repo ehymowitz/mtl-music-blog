@@ -1,6 +1,6 @@
-import React from "react"
-import Layout from "../components/fixed/layout"
-import SEO from "../components/seo"
+import React from 'react'
+import Layout from '../components/fixed/layout'
+import SEO from '../components/seo'
 
 export default function Contact() {
   return (
