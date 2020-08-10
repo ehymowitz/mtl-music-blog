@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <Layout>
     <SEO title="Contact" description="Contact us"/>
-      <h2>Ask Us Anything!</h2>
+      <h2>Want to write some content? We'd love to hear from you</h2>
       <form name="contact" className="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input aria-label="hidden" type="hidden" name="form-name" value="contact" />
         <p>

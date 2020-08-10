@@ -1,7 +1,8 @@
 import React from "react"
 import Link from "gatsby-link"
-import Img from "gatsby-image"
 import slugify from 'slugify'
+import ReleaseCard from '../cards/release-card'
+import Img from "gatsby-image"
 
 const slugifyOptions = {
   replacement: '-',
@@ -9,19 +10,36 @@ const slugifyOptions = {
   lower: true
 }
 
-// TODO: Refactor to use cards. Check sorted by date
+// TODO: Check sorted by date
 
 export default function LinkListRelease({data}) {
   return(
-    <div>
-      <ul className="link-list-release album-release-links">
-        { data.allContentfulAlbumRelease.edges.map((node, i) => (
+    <div className="release-links">
+      <Link
+        to={`/posts/${slugify(data.allContentfulAlbumRelease.edges[0].node.title, slugifyOptions)}`}
+        className="recent-article-image"
+      >
+        <div className="image-overlay"/>
+        <Img
+          fluid={data.allContentfulAlbumRelease.edges[0].node.albumCover.fluid}
+        />
+        <div className="recent-article-text">
+          <h3>{data.allContentfulAlbumRelease.edges[0].node.title}</h3>
+          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
+          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
+        </div>
+      </Link>
+      <ul className="album-release-link-list">
+        {data.allContentfulAlbumRelease.edges.map((node, i) => (
           <li key={i}>
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
-              <Img fixed={node.node.albumCover.fixed}/>
-              {node.node.title}
-              {node.node.date}
-              {node.node.author}
+              <ReleaseCard
+                image={node.node.albumCover.fluid}
+                title={node.node.title}
+                date={node.node.date}
+                author={node.node.author}
+                content={node.node.content.json.content[0].content[0].value}
+                />
             </Link>
           </li>
         ))}

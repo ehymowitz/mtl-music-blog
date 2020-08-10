@@ -8,7 +8,6 @@ export default function NewReleases({data}) {
   return(
     <Layout>
       <SEO title="New Releases"/>
-      <h2>New Releases</h2>
       <LinkListRelease data = {data} />
     </Layout>
   )
@@ -19,13 +18,16 @@ export const albumQuery = graphql`
     allContentfulAlbumRelease(limit: 1000){
       edges {
         node {
+          content{
+            json
+          }
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           albumCover {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }

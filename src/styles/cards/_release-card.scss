@@ -1,0 +1,21 @@
+.release-card {
+  display: flex;
+  .preview-image {
+    min-width: 35%;
+  }
+  .text-container {
+    display: grid;
+    grid-template-rows: 0.3fr 0.3fr 150px;
+    grid-template-areas: "top top" "left right" "bottom bottom";
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: $Laptops-big) {
+  .release-card {
+    .text-container {
+      margin-left: 20px;
+      padding-top: 4%;
+    }
+  }
+}

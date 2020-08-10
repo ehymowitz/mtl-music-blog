@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -12,6 +13,12 @@ h2 {
   font-family: 'Krona One', sans-serif;
   font-size: 25px;
   margin: 10px 0px;
+}
+
+h3 {
+  font-family: 'Krona One', sans-serif;
+  font-size: 18px;
+  margin: 0px;
 }
 
 p {
@@ -30,6 +37,7 @@ a {
   font-size: 18px;
 }
 
+
 @media only screen and (max-width: $Tablet-sm) {
   h1 {
     font-size: 24px;
@@ -37,6 +45,10 @@ a {
 
   h2 {
     font-size: 18px;
+  }
+
+  h3 {
+    font-size: 12px;
   }
 
   p {
@@ -63,5 +75,37 @@ a {
 
   a {
     font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: $Phone-sm) {
+  h1 {
+    font-size: 12px;
+  }
+
+  a {
+    font-size: 6px;
+  }
+}
+
+@media only screen and (min-width: $Laptops-big) {
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  a {
+    font-size: 24px;
   }
 }
