@@ -12,6 +12,10 @@
   }
 }
 
+.active-link {
+  color: darkgrey;
+}
+
 @media only screen and (max-width: $Laptops-sm) {
   .top-nav {
     width: 90vw;
