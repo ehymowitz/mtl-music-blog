@@ -20,7 +20,7 @@ export const blogQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           coverPhoto {
             fluid {
