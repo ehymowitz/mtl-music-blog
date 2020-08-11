@@ -3,16 +3,63 @@
 
   .album-release-link-list {
     list-style-type: none;
-    min-height: 72vh;
     margin: 16px 30px;
     padding-left: 0px;
     display: grid;
     grid-auto-flow: column;
     overflow-x: scroll;
     grid-template-rows: 50% 50%;
+    height: 80vh;
+
     li {
      width: 24vw;
     }
   }
+}
 
+@media only screen and (max-width: $Laptops-sm) {
+  .blog-links {
+    .album-release-link-list {
+      height: 72vh;
+    }
+  }
+}
+
+@media only screen and (max-width: $Tablets) {
+  .blog-links {
+    .album-release-link-list{
+      li {
+        width: 31vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $Tablets) {
+  .blog-links {
+    .album-release-link-list{
+      margin: 16px 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: $Phones) {
+  .blog-links {
+    .album-release-link-list{
+      height: 80vh;
+      li {
+        width: 44vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $Phone-sm) {
+  .blog-links {
+    .album-release-link-list{
+      li {
+        width: 65vw;
+      }
+    }
+  }
 }

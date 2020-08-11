@@ -1,6 +1,7 @@
 .blog-card {
   height: 100%;
-  overflow: hidden;;
+  overflow: hidden;
+  position: relative;
   .gatsby-image-wrapper {
     min-height: 100%;
   }
