@@ -5,6 +5,7 @@ import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '../components/fixed/layout'
 import SEO from '../components/seo'
+import BlogLinks from '../components/fixed/blog-links'
 
 export default function BlogPost({data}) {
   const content = data.contentfulBlogPost.content.json
@@ -32,10 +33,10 @@ export default function BlogPost({data}) {
       <div className="blog-post">
         <div className="blog-post-content">
           <div className="blog-post-images">
-            <Img className="blog-post-image" style={{maxWidth: "50vw"}} fluid={cover}/>
+            <Img className="blog-post-image" fluid={cover}/>
             <div className="blog-post-images-additional">
-              {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
-              {additionalPhoto2 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto2.fluid}/>}
+              {additionalPhoto1 !== null && <Img fluid={additionalPhoto1.fluid}/>}
+              {additionalPhoto2 !== null && <Img fluid={additionalPhoto2.fluid}/>}
             </div>
           </div>
           <div className="blog-post-text">
@@ -47,6 +48,7 @@ export default function BlogPost({data}) {
             <div>{documentToReactComponents(content, options)}</div>
           </div>
         </div>
+        <BlogLinks/>
       </div>
     </Layout>
   )
