@@ -9,7 +9,8 @@
     grid-auto-flow: column;
     overflow-x: scroll;
     grid-template-rows: 50% 50%;
-    height: 80vh;
+    height:80vh;
+    min-height: 600px;
 
     li {
      width: 24vw;
@@ -21,6 +22,7 @@
   .blog-links {
     .album-release-link-list {
       height: 72vh;
+      min-height: 500px;
     }
   }
 }

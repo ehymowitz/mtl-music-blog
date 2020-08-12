@@ -21,7 +21,7 @@ export default function BlogPost({data}) {
       [MARKS.CODE]: (text) => {
         if((text).includes("open.spotify")){
           const link = text.substring(text.search("src=")+5, text.search("width=")-2)
-          return <iframe title={title} src={link} width="300" height="80" style={{margin: "50px auto"}} frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+          return <iframe title={title} src={link} width="100%" height="80" style={{margin: "25px auto"}} frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
         }
       }
     }
@@ -32,20 +32,22 @@ export default function BlogPost({data}) {
       <SEO title="Blog Post" description={title} article={true} image={cover.src}/>
       <div className="blog-post">
         <div className="blog-post-content">
-          <div className="blog-post-images">
-            <Img className="blog-post-image" fluid={cover}/>
-            <div className="blog-post-images-additional">
-              {additionalPhoto1 !== null && <Img fluid={additionalPhoto1.fluid}/>}
-              {additionalPhoto2 !== null && <Img fluid={additionalPhoto2.fluid}/>}
+          <div style={{overflowY: "scroll"}}>
+            <div className="blog-post-images">
+              <Img className="blog-post-image" fluid={cover}/>
+              <div className="blog-post-images-additional">
+                {additionalPhoto1 !== null && <Img fluid={additionalPhoto1.fluid}/>}
+                {additionalPhoto2 !== null && <Img fluid={additionalPhoto2.fluid}/>}
+              </div>
             </div>
           </div>
           <div className="blog-post-text">
             <h2 className="blog-post-title">{title}</h2>
             <div className="blog-post-details">
-              <h3 style={{margin: "0px 20px"}}>{author}</h3>
-              <h3 style={{margin: "0px 20px"}}>{date}</h3>
+              <h3 style={{margin: "0px 20px", fontStyle: "italic", fontFamily: "Ubuntu, sans-serif", fontWeight: "300"}}>{date}</h3>
+              <h3 style={{margin: "0px 20px", fontStyle: "bold", fontFamily: "Ubuntu, sans-serif"}}>{author}</h3>
             </div>
-            <div>{documentToReactComponents(content, options)}</div>
+            <div className="blog-post-body">{documentToReactComponents(content, options)}</div>
           </div>
         </div>
         <BlogLinks/>

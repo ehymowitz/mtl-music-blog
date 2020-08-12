@@ -11,9 +11,8 @@ const slugifyOptions = {
 }
 
 export default function BlogLinks() {
-
   const posts = useStaticQuery(query)
-  console.log(posts)
+
   return (
     <footer className="blog-links-menu">
       <ul>
