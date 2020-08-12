@@ -1,16 +1,48 @@
 .blog-links-menu {
-  margin: 0px 30px;
   overflow-x: scroll;
-
+  margin-top: 20px;
+  min-height: 150px;
   ul {
     display: grid;
     grid-auto-flow: column;
     list-style-type: none;
     padding-left: 0px;
+    margin: 0px;
 
     li {
-      width: 8vw;
+      width: 10vw;
       margin-right: 70px;
+
+      h3 {
+        font-size: 10px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      .gatsby-image-wrapper {
+        max-height: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $Laptops-big) {
+  .blog-links-menu {
+    ul {
+      li {
+        .gatsby-image-wrapper {
+          max-height: 130px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
     }
   }
 }

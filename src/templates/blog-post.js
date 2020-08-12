@@ -21,7 +21,7 @@ export default function BlogPost({data}) {
       [MARKS.CODE]: (text) => {
         if((text).includes("open.spotify")){
           const link = text.substring(text.search("src=")+5, text.search("width=")-2)
-          return <iframe title={title} src={link} width="500" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+          return <iframe title={title} src={link} width="500" height="80" style={{margin: "50px"}} frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
         }
       }
     }
@@ -45,7 +45,7 @@ export default function BlogPost({data}) {
               <h3 style={{margin: "0px 20px"}}>{author}</h3>
               <h3 style={{margin: "0px 20px"}}>{date}</h3>
             </div>
-            <div>{documentToReactComponents(content, options)}</div>
+            <div>{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}{documentToReactComponents(content, options)}</div>
           </div>
         </div>
         <BlogLinks/>

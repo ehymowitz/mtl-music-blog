@@ -3,8 +3,6 @@
   padding: 1em 30px;
   margin-bottom: 0px;
   display: grid;
-  grid-template-rows: 70% 30%;
-  height: 80vh;
   .blog-post-content {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -20,11 +18,22 @@
       padding-left: 40px;
       text-align: center;
       overflow-y: scroll;
+      max-height: 55vh;
 
       .blog-post-details {
         display: flex;
         justify-content: flex-end;
         margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $Laptops-big) {
+  .blog-post {
+    .blog-post-content {
+      .blog-post-text {
+        max-height: 65vh;
       }
     }
   }

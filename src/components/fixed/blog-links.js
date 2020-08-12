@@ -15,21 +15,21 @@ export default function BlogLinks() {
   const posts = useStaticQuery(query)
   console.log(posts)
   return (
-    <div className="blog-links-menu">
+    <footer className="blog-links-menu">
       <ul>
         { posts.allContentfulBlogPost.edges.map((node, i) => (
           <li key={i}>
             <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
               <Img fluid={node.node.coverPhoto.fluid}/>
               <div style={{textAlign: "center", marginTop:"5px"}}>
-                <h3 style={{fontSize:"10px"}}>{node.node.title}</h3>
-                <p style={{fontSize:"10px"}}>{node.node.author}</p>
+                <h3>{node.node.title}</h3>
+                <p>{node.node.author}</p>
               </div>
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </footer>
   )
 }
 
