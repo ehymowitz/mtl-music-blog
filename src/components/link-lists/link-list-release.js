@@ -25,8 +25,8 @@ export default function LinkListRelease({data}) {
         />
         <div className="recent-article-text">
           <h3>{data.allContentfulAlbumRelease.edges[0].node.title}</h3>
-          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
-          <h3 style={{textAlign: "end"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
+          <h3 style={{textAlign: "end", fontFamily: "Ubuntu, sans-serif", fontStyle: "none", fontWeight: "300", fontStyle: "italic"}}>{data.allContentfulAlbumRelease.edges[0].node.date}</h3>
+          <h3 style={{textAlign: "end", fontFamily: "Ubuntu, sans-serif", fontStyle: "bold"}}>{data.allContentfulAlbumRelease.edges[0].node.author}</h3>
         </div>
       </Link>
       <ul className="album-release-link-list">

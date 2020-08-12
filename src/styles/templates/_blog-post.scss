@@ -23,6 +23,7 @@
       text-align: center;
       overflow-y: scroll;
       max-height: 55vh;
+      line-height: 25px;
 
       .blog-post-details {
         display: flex;
@@ -55,6 +56,21 @@
         padding: 0px;
         .blog-post-body {
           text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $Tablet-sm) {
+  .blog-post {
+    padding: 1em 20px;
+    .blog-post-content {
+      .blog-post-text {
+        .blog-post-body {
+          p {
+            margin: 0px;
+          }
         }
       }
     }

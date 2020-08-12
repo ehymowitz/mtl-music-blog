@@ -15,8 +15,8 @@ export default function ReleaseCard({image, title, date, author, content}) {
       />
       <div className="text-container">
         <h3 style={{gridArea: "top", marginBottom: "10px"}}>{title}</h3>
-        <h3 style={{gridArea: "left", textAlign: "center"}}>{date}</h3>
-        <h3 style={{gridArea: "right", textAlign: "center"}}>{author}</h3>
+        <h3 style={{gridArea: "left", textAlign: "center", fontFamily: "Ubuntu, sans-serif", fontStyle: "none", fontWeight: "300", fontStyle: "italic"}}>{date}</h3>
+        <h3 style={{gridArea: "right", textAlign: "right", fontFamily: "Ubuntu, sans-serif", fontStyle: "bold", paddingRight: "25px"}}>{author}</h3>
         <p style={{
           gridArea: "bottom",
           margin: "0",
