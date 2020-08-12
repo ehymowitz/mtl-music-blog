@@ -21,7 +21,7 @@
     .blog-post-text {
       padding-left: 40px;
       text-align: center;
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 55vh;
       line-height: 25px;
 
@@ -43,7 +43,7 @@
       .blog-post-images {
         grid-auto-flow: column;
         grid-template-columns: 1fr auto;
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
         height: 200px;
         .blog-post-images-additional {
