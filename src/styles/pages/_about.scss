@@ -1,0 +1,27 @@
+.about-container {
+  border-top: 1px solid grey;
+  padding-top: 6px;
+
+  .about-text-wrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    h2 {
+      font-family: Ubuntu, sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  .about-photo-grid {
+    border: 1px solid red;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .about {
+      border: 1px solid blue;
+      text-align: center;
+    }
+  }
+}

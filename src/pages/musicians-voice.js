@@ -8,7 +8,6 @@ export default function MusiciansVoice({data}) {
   return(
     <Layout>
       <SEO title="Blog"/>
-      <h2>Blog</h2>
       <LinkListBlog data={data}/>
     </Layout>
   )
@@ -21,11 +20,11 @@ export const blogQuery = graphql`
         node {
           id
           author
-          date
+          date(formatString: "MMMM DD, YYYY")
           title
           coverPhoto {
-            fixed(width: 100) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
