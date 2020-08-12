@@ -10,7 +10,7 @@
     margin: 0px;
 
     li {
-      width: 10vw;
+      width: 12vw;
       margin-right: 70px;
 
       h3 {
@@ -30,9 +30,23 @@
 
 @media only screen and (max-width: $Tablets) {
   .blog-links-menu {
-    display: none;
+    ul {
+      li {
+        width: 20vw;
+      }
+    }
     .gatsby-image-wrapper {
       max-height: none;
+    }
+  }
+}
+
+@media only screen and (max-width: $Phones) {
+  .blog-links-menu {
+    ul {
+      li {
+        width: 40vw;
+      }
     }
   }
 }

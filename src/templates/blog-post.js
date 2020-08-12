@@ -47,7 +47,7 @@ export default function BlogPost({data}) {
               <h3 style={{margin: "0px 20px"}}>{author}</h3>
               <h3 style={{margin: "0px 20px"}}>{date}</h3>
             </div>
-            <div>{documentToReactComponents(content, options)}</div>
+            <div className="blog-post-body">{documentToReactComponents(content, options)}</div>
           </div>
         </div>
         <BlogLinks/>

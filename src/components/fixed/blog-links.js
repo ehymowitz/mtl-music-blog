@@ -26,6 +26,46 @@ export default function BlogLinks() {
               </div>
             </Link>
           </li>
+        ))}{ posts.allContentfulBlogPost.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fluid={node.node.coverPhoto.fluid}/>
+              <div style={{textAlign: "center", marginTop:"5px"}}>
+                <h3>{node.node.title}</h3>
+                <p>{node.node.author}</p>
+              </div>
+            </Link>
+          </li>
+        ))}{ posts.allContentfulBlogPost.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fluid={node.node.coverPhoto.fluid}/>
+              <div style={{textAlign: "center", marginTop:"5px"}}>
+                <h3>{node.node.title}</h3>
+                <p>{node.node.author}</p>
+              </div>
+            </Link>
+          </li>
+        ))}{ posts.allContentfulBlogPost.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fluid={node.node.coverPhoto.fluid}/>
+              <div style={{textAlign: "center", marginTop:"5px"}}>
+                <h3>{node.node.title}</h3>
+                <p>{node.node.author}</p>
+              </div>
+            </Link>
+          </li>
+        ))}{ posts.allContentfulBlogPost.edges.map((node, i) => (
+          <li key={i}>
+            <Link key={i} to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
+              <Img fluid={node.node.coverPhoto.fluid}/>
+              <div style={{textAlign: "center", marginTop:"5px"}}>
+                <h3>{node.node.title}</h3>
+                <p>{node.node.author}</p>
+              </div>
+            </Link>
+          </li>
         ))}
       </ul>
     </footer>
