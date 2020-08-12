@@ -10,7 +10,7 @@ export default function TopNav() {
         <h1>THE SOUND GAP</h1>
       </Link>
       <Link activeClassName="active-link" to="/about">ABOUT</Link>
-      <Link activeClassName="active-link" to="/contact">CONTRIBUTE</Link>
+      <Link activeClassName="active-link" to="/contact">CONTACT</Link>
     </div>
   )
 }
