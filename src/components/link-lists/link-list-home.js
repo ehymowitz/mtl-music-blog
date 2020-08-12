@@ -9,7 +9,7 @@ const slugifyOptions = {
   lower: true
 }
 
-// TODO: Check sorted by date
+// TODO: Sort by date
 
 export default function LinkListHome({data}) {
   return(
