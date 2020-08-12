@@ -32,11 +32,13 @@ export default function BlogPost({data}) {
       <SEO title="Blog Post" description={title} article={true} image={cover.src}/>
       <div className="blog-post">
         <div className="blog-post-content">
-          <div className="blog-post-images">
-            <Img className="blog-post-image" fluid={cover}/>
-            <div className="blog-post-images-additional">
-              {additionalPhoto1 !== null && <Img fluid={additionalPhoto1.fluid}/>}
-              {additionalPhoto2 !== null && <Img fluid={additionalPhoto2.fluid}/>}
+          <div style={{overflowY: "scroll"}}>
+            <div className="blog-post-images">
+              <Img className="blog-post-image" fluid={cover}/>
+              <div className="blog-post-images-additional">
+                {additionalPhoto1 !== null && <Img fluid={additionalPhoto1.fluid}/>}
+                {additionalPhoto2 !== null && <Img fluid={additionalPhoto2.fluid}/>}
+              </div>
             </div>
           </div>
           <div className="blog-post-text">

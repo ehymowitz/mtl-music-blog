@@ -6,10 +6,14 @@
   .blog-post-content {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    height: 53vh;
+    min-height: 310px;
 
     .blog-post-images {
+      display: grid;
       .blog-post-images-additional {
         display: grid;
+        grid-template-columns: auto;
         grid-auto-flow: column;
       }
     }
