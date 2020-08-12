@@ -28,6 +28,15 @@
   }
 }
 
+@media only screen and (max-width: $Tablets) {
+  .blog-links-menu {
+    display: none;
+    .gatsby-image-wrapper {
+      max-height: none;
+    }
+  }
+}
+
 @media only screen and (min-width: $Laptops-big) {
   .blog-links-menu {
     ul {
