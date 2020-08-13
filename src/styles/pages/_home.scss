@@ -15,7 +15,7 @@
     padding: 0px;
     display: grid;
     height: 75vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     list-style-type: none;
     grid-template-columns: repeat(2,  1fr);
@@ -49,7 +49,7 @@
 @media only screen and (min-width: $Laptops-big) {
   .home-links{
     h2 {
-      left: 48%;
+      left: 48.5%;
     }
   }
 }
