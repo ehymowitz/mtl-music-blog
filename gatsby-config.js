@@ -4,6 +4,13 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/`,
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-source-contentful',
@@ -19,6 +26,6 @@ module.exports = {
     description:
       "A place for artists to be seen and heard",
     url: "https://www.doe.com", // No trailing slash allowed! Update
-    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder. Update
+    image: "/pictures/THESOUNDGAP.png",
   },
 }

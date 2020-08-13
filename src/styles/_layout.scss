@@ -32,7 +32,6 @@ p {
   a {
     font-family: 'Ubuntu', sans-serif;;
     font-size: 18px;
-    margin: 5px 10px;
     text-decoration: underline;
   }
 }
@@ -63,6 +62,9 @@ a {
 
   p {
     font-size: 12px;
+    a {
+      font-size: 12px;
+    }
   }
 
   a {
@@ -81,6 +83,9 @@ a {
 
   p {
     font-size: 12px;
+    a {
+      font-size: 12px;
+    }
   }
 
   a {
@@ -114,6 +119,10 @@ a {
 
   p {
     font-size: 24px;
+
+    a {
+      font-size: 24px;
+    }
   }
 
   a {

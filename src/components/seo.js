@@ -22,7 +22,7 @@ export default function SEO({ title, description, image, article }) {
     url: `${siteUrl}${pathname}`,
   }
 
-  //TODO: update url, default photo when ready
+  //TODO: update url
 
   return (
     <Helmet defer={false} title={seo.title} titleTemplate={titleTemplate}>

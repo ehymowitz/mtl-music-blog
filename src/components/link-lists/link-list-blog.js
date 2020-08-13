@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Img from 'gatsby-image'
 import slugify from 'slugify'
 import BlogCard from '../cards/blog-card'
 
@@ -17,7 +16,7 @@ export default function LinkListBlog({data}) {
     <div className="blog-links">
       <ul className="album-release-link-list">
         { data.allContentfulBlogPost.edges.map((node, i) => (
-          <li>
+          <li key={i}>
             <Link to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
             <BlogCard
               image={node.node.coverPhoto.fluid}
