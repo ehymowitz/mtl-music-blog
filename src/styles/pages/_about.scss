@@ -5,6 +5,10 @@
   .about-text-wrapper {
     width: 80%;
     margin: 0 auto;
+    text-align: center;
+
+    h1 {
+    }
 
     h2 {
       font-family: Ubuntu, sans-serif;
@@ -12,16 +16,14 @@
     }
   }
 
-  .about-photo-grid {
-    border: 1px solid red;
-    width: 80%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    .about {
-      border: 1px solid blue;
-      text-align: center;
+  .about-team-wrapper {
+    text-align: center;
+    .about-photo-grid {
+      width: 80%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
   }
 }

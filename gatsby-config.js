@@ -11,6 +11,8 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-source-contentful',
