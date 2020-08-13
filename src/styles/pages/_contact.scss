@@ -18,19 +18,23 @@
       padding: 20px;
       p {
         input {
+          display: flex;
           margin-top: 10px;
           min-height: 30px;
           padding: 5px;
           border: 1px solid gainsboro;
           width: -webkit-fill-available;
+          width: 100%;
           font-family: 'Ubuntu', sans-serif;
         }
         textarea{
+          display: flex;
           margin-top: 10px;
           min-height: 50px;
           padding: 5px;
           border: 1px solid gainsboro;
           width: -webkit-fill-available;
+          width: 100%;
           font-family: 'Ubuntu', sans-serif;
         }
     }
