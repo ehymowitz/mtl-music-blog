@@ -16,7 +16,7 @@ export default function LinkListBlog({data}) {
     <div className="blog-links">
       <ul className="album-release-link-list">
         { data.allContentfulBlogPost.edges.map((node, i) => (
-          <li>
+          <li key={i}>
             <Link to={`/posts/${slugify(node.node.title, slugifyOptions)}`}>
             <BlogCard
               image={node.node.coverPhoto.fluid}
