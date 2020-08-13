@@ -1,5 +1,6 @@
 .release-card {
   display: flex;
+  overflow: hidden;
   .preview-image {
     min-width: 35%;
   }

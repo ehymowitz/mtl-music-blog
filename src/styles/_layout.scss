@@ -3,6 +3,15 @@ body {
   margin-bottom: 10px;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
 h1 {
   font-family: 'Krona One', sans-serif;
   margin: 0px;

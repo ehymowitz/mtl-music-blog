@@ -4,14 +4,13 @@ import Img from 'gatsby-image'
 import SEO from '../components/seo'
 
 export default function About({data}) {
-  console.log(data)
 
   return(
     <Layout>
       <SEO title="About" description="About the project"/>
       <div className="about-container">
         <div className="about-text-wrapper">
-          <h1>About</h1>
+          <h1>ABOUT</h1>
           <h2>
             The Sound Gap was founded to bridge the gap between musicians, creators, and listeners. We see a gap in people listening to music and wanting to know more about who made it, why, and what does it mean to them?
           </h2>
@@ -20,7 +19,7 @@ export default function About({data}) {
           </h2>
         </div>
         <div className="about-team-wrapper">
-          <h1>The Team</h1>
+          <h1>THE TEAM</h1>
           <div className="about-photo-grid">
             <div>
               <Img
