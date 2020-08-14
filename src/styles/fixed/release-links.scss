@@ -1,0 +1,29 @@
+.release-links-menu {
+  overflow-y: auto;
+  margin-top: 25px;
+  min-height: 150px;
+    ul {
+    display: grid;
+    grid-auto-flow: row;
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+
+    li {
+      width: 12vw;
+      margin-right: 70px;
+
+      h3 {
+        font-size: 10px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      .gatsby-image-wrapper {
+        max-height: 100px;
+      }
+    }
+  }
+}

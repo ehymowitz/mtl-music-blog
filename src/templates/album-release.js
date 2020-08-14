@@ -5,6 +5,7 @@ import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '../components/fixed/layout'
 import SEO from '../components/seo'
+import ReleaseLinks from '../components/fixed/release-links'
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json
@@ -49,7 +50,7 @@ export default function AlbumRelease({data}) {
             <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
           </div>
         </div>
-          <p>list menu will go here</p>
+          <ReleaseLinks/>
       </div>
     </Layout>
   )
