@@ -5,9 +5,15 @@
   border-top: 1px solid grey;
   .album-release {
     display: grid;
+    .album-release-author-date {
+      display: flex;
+      justify-content: flex-end;
+      margin: 20px;
+    }
     .album-release-photos {
       display: grid;
       grid-auto-flow: column;
+      grid-gap: 20px;
     }
   }
 }
