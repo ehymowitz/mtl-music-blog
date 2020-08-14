@@ -5,6 +5,7 @@ import { MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '../components/fixed/layout'
 import SEO from '../components/seo'
+import ReleaseLinks from '../components/fixed/release-links'
 
 export default function AlbumRelease({data}) {
   const content = data.contentfulAlbumRelease.content.json
@@ -21,7 +22,7 @@ export default function AlbumRelease({data}) {
       [MARKS.CODE]: (text) => {
         if((text).includes("open.spotify")){
           const link = text.substring(text.search("src=")+5, text.search("width=")-2)
-          return <iframe title={title} src={link} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+          return <iframe title={title} src={link} width="100%" height="80" style={{margin: "25px auto"}} frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
         }
       }
     }
@@ -30,15 +31,26 @@ export default function AlbumRelease({data}) {
   return(
     <Layout>
       <SEO title="New Release" description={title} article={true} image={cover.src}/>
-      <h1 className="album-release-title">{title}</h1>
-      <h2>{author}</h2>
-      <h2>{date}</h2>
-      {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
-      {additionalPhoto2 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto2.fluid}/>}
-      {additionalPhoto3 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto3.fluid}/>}
-      <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
-      <div className="album-release-content">
-        {documentToReactComponents(content,options)}
+      <div className="album-release-wrapper">
+        <div className="album-release">
+          <div className="album-release-heading">
+            <h1 style={{textAlign: "center"}}>{title}</h1>
+            <div className="album-release-author-date">
+              <h3 style={{margin: "0px 20px", fontStyle: "italic", fontFamily: "Ubuntu, sans-serif", fontWeight: "300"}}>{date}</h3>
+              <h3 style={{margin: "0px 20px", fontStyle: "bold", fontFamily: "Ubuntu, sans-serif"}}>{author}</h3>
+            </div>
+          </div>
+          <div className="album-release-content">
+            {documentToReactComponents(content,options)}
+          </div>
+          <div className="album-release-photos">
+            {additionalPhoto1 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto1.fluid}/>}
+            {additionalPhoto2 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto2.fluid}/>}
+            {additionalPhoto3 !== null && <Img style={{maxWidth: "50vw"}} fluid={additionalPhoto3.fluid}/>}
+            <Img className="album-cover" style={{maxWidth: "50vw"}} fluid={cover}/>
+          </div>
+        </div>
+          <ReleaseLinks/>
       </div>
     </Layout>
   )
@@ -49,7 +61,7 @@ export const albumReleaseQuery = graphql`
     contentfulAlbumRelease( id: { eq: $id } ) {
       id
       author
-      date
+      date(formatString: "MMMM DD, YYYY")
       title
       content {
         json
