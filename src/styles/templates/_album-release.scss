@@ -17,3 +17,17 @@
     }
   }
 }
+
+@media only screen and (max-width: $Tablet-sm) {
+  .album-release-wrapper {
+    grid-template-columns: 1fr;
+    padding: 1em 20px;
+  }
+}
+
+
+@media only screen and (min-width: $Laptops-big) {
+  .album-release-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
