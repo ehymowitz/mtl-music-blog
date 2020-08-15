@@ -13,8 +13,6 @@ const slugifyOptions = {
 export default function ReleaseLinks() {
   const posts = useStaticQuery(query)
 
-  console.log(posts)
-
   return (
     <footer className="release-links-menu">
       <ul>

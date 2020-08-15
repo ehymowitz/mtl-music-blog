@@ -30,6 +30,8 @@
   }
 }
 
+
+
 @media only screen and (max-width: $Tablets) {
   .home-links{
     text-align: center;
@@ -40,7 +42,7 @@
     }
 
     .home-link-list {
-      margin: 5px;
+      margin: 13px;
       grid-template-columns: repeat(1,  1fr);
     }
   }
